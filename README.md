@@ -9,7 +9,7 @@ Ingest the tweets to MapR-DB.
 Launch:
 
     # Compile the Twitter Sentiment Analysis jar
-    JAVA_OPTS=-Xmx2G sbt assembly
+    JAVA_OPTS=-Xmx2G sbt clean package assembly
 
     # Create a table in MapR-DB to store the Twitter messages plus the sentiment analysis result
     su - mapr
@@ -22,7 +22,6 @@ Launch:
     #In order to run the job, you have to clone the project and compile it with sbt as usual.
     git clone https://github.com/alonsoir/twitter-sentiment-analysis.git
     cd twitter-sentiment-analysis
-    sbt clean package assembly 
 
     /opt/mapr/spark/spark-*/bin/spark-submit \
     --class com.github.vspiewak.TwitterSentimentAnalysis \
