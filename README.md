@@ -39,7 +39,7 @@ Launch:
     
     Do you want to know what is going on with BigData and MapR?
     i.e.
-        /opt/mapr/spark/spark-*/bin/spark-submit \
+     /opt/mapr/spark/spark-*/bin/spark-submit \
     --class com.github.vspiewak.TwitterSentimentAnalysis \
     --master local[2] \
     target/twitter-sentiment-analysis-assembly-0.1-SNAPSHOT.jar \
