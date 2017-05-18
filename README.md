@@ -20,7 +20,7 @@ Launch:
     su - mapr
 
     #In order to run the job, you have to clone the project and compile it with sbt as usual.
-    git clone https://github.com/alonsoir/twitter-sentiment-analysis.git
+    git clone https://github.com/jatin7/twitter-sentiment-analysis.git
     cd twitter-sentiment-analysis
 
     /opt/mapr/spark/spark-*/bin/spark-submit \
