@@ -42,7 +42,7 @@ Launch:
      /opt/mapr/spark/spark-*/bin/spark-submit \
     --class com.github.vspiewak.TwitterSentimentAnalysis \
     --master local[2] \
-    target/twitter-sentiment-analysis-assembly-0.1-SNAPSHOT.jar \
+    target/twitter-sentiment-analysis-0.1-SNAPSHOT.jar \
     <consumer_key> \
     <consumer_secret> \
     <access_token> \
