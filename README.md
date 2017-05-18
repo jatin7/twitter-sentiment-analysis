@@ -19,6 +19,11 @@ Launch:
     # Launch the Twitter capture and store the messages in MapR-DB & Elasticsearch
     su - mapr
 
+    #In order to run the job, you have to clone the project and compile it with sbt as usual.
+    git clone https://github.com/alonsoir/twitter-sentiment-analysis.git
+    cd twitter-sentiment-analysis
+    sbt clean package assembly 
+
     /opt/mapr/spark/spark-*/bin/spark-submit \
     --class com.github.vspiewak.TwitterSentimentAnalysis \
     --master local[2] \
@@ -32,3 +37,19 @@ Launch:
     <ColumnFamily> \
     /user/mapr/out \
     [<filters>]
+    
+    Do you want to know what is going on with BigData and MapR?
+    i.e.
+        /opt/mapr/spark/spark-*/bin/spark-submit \
+    --class com.github.vspiewak.TwitterSentimentAnalysis \
+    --master local[2] \
+    target/twitter-sentiment-analysis-assembly-0.1-SNAPSHOT.jar \
+    <consumer_key> \
+    <consumer_secret> \
+    <access_token> \
+    <access_token_secret> \
+    <maprdbandelastic|maprdbjsonandelastic|maprdbonly|maprdbjsononly|elasticonly> \
+    </path/to/maprdb-binary-table> \
+    <ColumnFamily> \
+    /user/mapr/out \
+    Hadoop MapR
