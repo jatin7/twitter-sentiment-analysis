@@ -31,8 +31,8 @@ object TwitterSentimentAnalysis extends LazyLogging {
        System.exit(1)
      }
 
-     DetectorFactory.loadProfile("/mapr/jatin.mapr.com/data/twitter-sentiment-analysis/src/main/resources/profiles")
-     //DetectorFactory.loadProfile("src/main/resources/profiles")
+     //DetectorFactory.loadProfile("/mapr/jatin.mapr.com/data/twitter-sentiment-analysis/src/main/resources/profiles")
+     DetectorFactory.loadProfile("src/main/resources/profiles")
 
      val Array(consumerKey, consumerSecret, accessToken, accessTokenSecret, storageType, maprdbTableName, maprdbColumnFamilyName, tempOutputFolder) = args.take(8)
      val filters = args.takeRight(args.length - 8)
