@@ -4,7 +4,9 @@ Twitter Sentiment Analysis
 Retrieve tweets using Spark Streaming,    
 language detection & sentiment analysis (StanfordNLP),    
 live dashboard using Kibana.
-Ingest the tweets to MapR-DB.
+Ingest the tweets to MapR-DB
+Index tweets in Elasticsearch
+Live dashboard using Kibana
 
 Launch:
 
@@ -52,3 +54,9 @@ Launch:
     <ColumnFamily> \
     /user/mapr/out \
     Hadoop MapR
+
+    Insert ElasticSearch Dashboard
+        chmod a+x insert.dashboard.sh
+        ./insert.dashboard.sh
+        
+    Original Author : https://github.com/vspiewak/twitter-sentiment-analysis 
