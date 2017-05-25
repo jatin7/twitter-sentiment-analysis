@@ -18,6 +18,11 @@ Launch:
     hbase shell
     create 'twitter_sentiment', 'TwitterSentiment'
 
+
+    Create ElasticSearch Index
+        chmod a+x insert.dashboard.sh
+        ./insert.dashboard.sh
+        
     # Launch the Twitter capture and store the messages in MapR-DB & Elasticsearch
     su - mapr
 
@@ -40,8 +45,9 @@ Launch:
     [<filters>]
     
     Do you want to know what is going on with BigData and MapR?
-    i.e.
-     /opt/mapr/spark/spark-*/bin/spark-submit \
+    i.e. 
+    
+    /opt/mapr/spark/spark-2.1.0/bin/spark-submit \
     --class com.github.vspiewak.TwitterSentimentAnalysis \
     --master local[2] \
     target/twitter-sentiment-analysis-0.1-SNAPSHOT.jar \
@@ -50,13 +56,11 @@ Launch:
     <access_token> \
     <access_token_secret> \
     <maprdbandelastic|maprdbjsonandelastic|maprdbonly|maprdbjsononly|elasticonly> \
-    </path/to/maprdb-binary-table> \
-    <ColumnFamily> \
+    twitter_sentiment \
+    TwitterSentiment \
     /user/mapr/out \
     Hadoop MapR
 
-    Insert ElasticSearch Dashboard
-        chmod a+x insert.dashboard.sh
-        ./insert.dashboard.sh
-        
-    Original Author : https://github.com/vspiewak/twitter-sentiment-analysis 
+
+
+Original Author : https://github.com/vspiewak/twitter-sentiment-analysis 
